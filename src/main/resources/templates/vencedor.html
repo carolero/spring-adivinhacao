@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <div th:each="erro : ${mensagem}">
+        <p style="color: red" th:text="${erro}"></p>
+    </div>
+
+    <form method="POST">
+        <p>Nome: <input type="text" name="nome"></p>
+        <p>Qual número irá chutar? <input type="number" value="0" name="chute"></p>
+        <h6>Chute um número entre 1 e 3</h6>
+        <button type="submit">Chutar</button>
+    </form>
+    <hr>
+    <h1>Vencedores</h1>
+    <div th:each="vencedor : ${vencedores}">
+        <h3 th:text="${vencedor.nome}"></h3>
+    </div>
+</body>
+</html>
